@@ -60,19 +60,25 @@ class Styles {
 TextTheme textTheme(bool isDarkMode) {
   return TextTheme(
     headline1: TextStyle(
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w900,
       fontSize: 32.sp,
       color: isDarkMode ? Colors.white : Colors.black,
       fontFamily: 'Gilroy',
     ),
     headline2: TextStyle(
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
       fontSize: 22.sp,
       color: isDarkMode ? const Color(0xff6F5FF8) : Colors.black,
       fontFamily: 'Gilroy',
     ),
     bodyText1: TextStyle(
       fontWeight: FontWeight.w500,
+      fontSize: 19.sp,
+      fontFamily: 'Gilroy',
+      color: isDarkMode ? Colors.white : Colors.black,
+    ),
+    bodyText2: TextStyle(
+      fontWeight: FontWeight.w700,
       fontSize: 19.sp,
       fontFamily: 'Gilroy',
       color: isDarkMode ? Colors.white : Colors.black,
