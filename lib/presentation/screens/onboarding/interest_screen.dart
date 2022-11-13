@@ -14,7 +14,7 @@ class InterestScreen extends StatefulWidget {
 }
 
 class _InterestScreenState extends State<InterestScreen> {
-  List<String> bubbles = [
+  List<String> interests = [
     'Music 🎧️',
     'Food 🥗',
     'Party 🥂',
@@ -36,7 +36,7 @@ class _InterestScreenState extends State<InterestScreen> {
             Expanded(
               child: BubbleSelection(
                 bubbles: [
-                  ...bubbles.map(
+                  ...interests.map(
                     (bubble) => Bubble(
                       text: bubble,
                       activeColor: const Color(0xffFFF4EE),
