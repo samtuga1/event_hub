@@ -76,13 +76,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               BottomNavigationBarItem(
                 activeIcon: null,
                 icon: Icon(null),
-                label: 'Post',
+                label: '',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.maps_ugc,
+                  Icons.confirmation_num,
                 ),
-                label: 'Chat',
+                label: 'Tickets',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
