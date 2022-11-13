@@ -1,3 +1,4 @@
+import 'package:event_hub/presentation/screens/outer_screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +10,7 @@ class BottomBarScreen extends StatefulWidget {
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
   final List<Widget> _pages = [
-    Container(),
+    ExploreScreen(),
     Container(),
     Container(),
     Container(),
