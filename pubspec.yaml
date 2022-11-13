@@ -52,6 +52,7 @@ dependencies:
   animations: ^2.0.7
   location: ^4.2.0
   geocoding: ^2.0.5
+  avatar_stack: ^1.1.2
 
 dev_dependencies:
   flutter_test:
