@@ -5,6 +5,8 @@ class Styles {
   // MY APP'S THEME DATA
   static ThemeData themeData(bool isDarkMode) {
     return ThemeData(
+      splashColor: Colors.transparent,
+      // highlightColor: Colors.transparent,
       useMaterial3: true,
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
@@ -65,7 +67,7 @@ TextTheme textTheme(bool isDarkMode) {
     ),
     headline2: TextStyle(
       fontWeight: FontWeight.w600,
-      fontSize: 26.sp,
+      fontSize: 22.sp,
       color: isDarkMode ? const Color(0xff6F5FF8) : Colors.black,
       fontFamily: 'Gilroy',
     ),
