@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,6 +44,24 @@ class GlobalMethods {
         title ?? '',
       ),
     );
+  }
+
+  static Widget textButton(bool isIos, TextStyle? style) {
+    return isIos
+        ? CupertinoButton(
+            child: Text(
+              'See all...',
+              style: style,
+            ),
+            onPressed: () {},
+          )
+        : TextButton(
+            onPressed: () {},
+            child: Text(
+              'See all...',
+              style: style,
+            ),
+          );
   }
 
   // ALERT DIALOG FROM PACKAGE
