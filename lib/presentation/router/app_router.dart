@@ -1,3 +1,4 @@
+import 'package:event_hub/presentation/screens/inner_screens/event_detail_screen.dart';
 import 'package:event_hub/presentation/screens/not_found_screen.dart';
 import 'package:event_hub/presentation/screens/onboarding/interest_screen.dart';
 import 'package:event_hub/presentation/screens/onboarding/fill_info_screen.dart';
@@ -29,6 +30,8 @@ class AppRouter {
         return route(const MapScreen());
       case BottomBarScreen.routeName:
         return route(BottomBarScreen());
+      case EventDetail.routeName:
+        return route(EventDetail());
       default:
         return route(const NotFoundScreen());
     }
