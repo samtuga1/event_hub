@@ -1,16 +1,19 @@
+// ignore_for_file: library_private_types_in_public_api
 import 'package:event_hub/presentation/screens/outer_screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomBarScreen extends StatefulWidget {
   static const routeName = '/bottom_bar';
+
+  const BottomBarScreen({super.key});
   @override
   _BottomBarScreenState createState() => _BottomBarScreenState();
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
   final List<Widget> _pages = [
-    ExploreScreen(),
+    const ExploreScreen(),
     Container(),
     Container(),
     Container(),
