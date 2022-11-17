@@ -4,23 +4,28 @@ import 'package:event_hub/logic/cubits/local_auth/local_auth_cubit.dart';
 import 'package:event_hub/logic/cubits/location/location_cubit.dart';
 import 'package:event_hub/presentation/router/app_router.dart';
 import 'package:event_hub/presentation/theme/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:location/location.dart';
 
+import 'firebase_options.dart';
 import 'presentation/screens/welcome_screen.dart';
 
 void main() async {
   // runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await ScreenUtil.ensureScreenSize();
   runApp(
-    const MyApp(),
-    // DevicePreview(
-    //   enabled: !kReleaseMode,
-    //   builder: (context) => const MyApp(), // Wrap your app
-    // ),
+    // const MyApp(),
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
   );
 }
 
@@ -57,9 +62,9 @@ class MyApp extends StatelessWidget {
             context,
             Theme.of(context).platform == TargetPlatform.iOS,
           ),
-          // useInheritedMediaQuery: true,
-          // locale: DevicePreview.locale(context),
-          // builder: DevicePreview.appBuilder,
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           theme: Styles.themeData(false),
           home: WelcomeScreen(),
           onGenerateRoute: (settings) => AppRouter().generateRoute(settings),
