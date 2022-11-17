@@ -57,6 +57,8 @@ dependencies:
   avatar_stack: ^1.1.2
   expandable_text: ^2.3.0
   firebase_ui_auth: ^1.0.5
+  firebase_auth: ^4.1.3
+  ticket_widget: ^0.0.1
 
 dev_dependencies:
   flutter_test:
