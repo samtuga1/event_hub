@@ -1,4 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
+import 'package:event_hub/presentation/screens/outer_screens/tickets_screen.dart';
 import 'package:event_hub/presentation/screens/outer_screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     const ExploreScreen(),
     Container(),
     Container(),
-    Container(),
+    const TicketsScreen(),
     Container(),
   ];
   int _selectedPageIndex = 0;
