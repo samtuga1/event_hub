@@ -18,116 +18,123 @@ class ExploreScreen extends StatelessWidget {
     final isIos = TargetPlatform.iOS == theme.platform;
 
     return Scaffold(
-      body: Column(
-        children: [
-          ExploreHeader(theme: theme),
-          SizedBox(
-            height: 20.h,
-          ),
-          Expanded(
-            child: ListView(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Popular Events', style: theme.textTheme.headline2),
-                      GlobalMethods.textButton(
-                        isIos,
-                        theme.textTheme.labelMedium?.copyWith(
-                          fontSize: 18.sp,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                SizedBox(
-                  height: 240.h,
-                  child: ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => EventCard(theme: theme),
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 10.w,
-                    ),
-                    itemCount: 7,
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                ShareCard(theme: theme),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Upcoming Events', style: theme.textTheme.headline2),
-                      GlobalMethods.textButton(
-                        isIos,
-                        theme.textTheme.labelMedium?.copyWith(
-                          fontSize: 18.sp,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                SizedBox(
-                  height: 240.h,
-                  child: ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => EventCard(theme: theme),
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 10.w,
-                    ),
-                    itemCount: 7,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Nearby you', style: theme.textTheme.headline2),
-                      GlobalMethods.textButton(
-                        isIos,
-                        theme.textTheme.labelMedium?.copyWith(
-                          fontSize: 18.sp,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                SizedBox(
-                  height: 240.h,
-                  child: ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => EventCard(theme: theme),
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 10.w,
-                    ),
-                    itemCount: 7,
-                  ),
-                ),
-              ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20.h,
             ),
-          ),
-        ],
+            ExploreHeader(theme: theme),
+            SizedBox(
+              height: 20.h,
+            ),
+            Expanded(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Popular Events',
+                            style: theme.textTheme.headline2),
+                        GlobalMethods.textButton(
+                          isIos,
+                          theme.textTheme.labelMedium?.copyWith(
+                            fontSize: 18.sp,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  SizedBox(
+                    height: 240.h,
+                    child: ListView.separated(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => EventCard(theme: theme),
+                      separatorBuilder: (context, index) => const SizedBox(
+                        width: 10,
+                      ),
+                      itemCount: 7,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  ShareCard(theme: theme),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Upcoming Events',
+                            style: theme.textTheme.headline2),
+                        GlobalMethods.textButton(
+                          isIos,
+                          theme.textTheme.labelMedium?.copyWith(
+                            fontSize: 18.sp,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    height: 240.h,
+                    child: ListView.separated(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => EventCard(theme: theme),
+                      separatorBuilder: (context, index) => const SizedBox(
+                        width: 10,
+                      ),
+                      itemCount: 7,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Nearby you', style: theme.textTheme.headline2),
+                        GlobalMethods.textButton(
+                          isIos,
+                          theme.textTheme.labelMedium?.copyWith(
+                            fontSize: 18.sp,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    height: 240.h,
+                    child: ListView.separated(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => EventCard(theme: theme),
+                      separatorBuilder: (context, index) => const SizedBox(
+                        width: 10,
+                      ),
+                      itemCount: 7,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -228,7 +235,7 @@ class EventCard extends StatelessWidget {
                     ],
                   ),
                   height: 230.h,
-                  width: 270.w,
+                  width: 260,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: GridTile(
@@ -251,7 +258,7 @@ class EventCard extends StatelessWidget {
                             Row(
                               children: [
                                 AvatarStack(
-                                  width: 80.w,
+                                  width: 50,
                                   height: 30.h,
                                   avatars: [
                                     for (var n = 0; n < 3; n++)
@@ -306,7 +313,7 @@ class EventCard extends StatelessWidget {
                   top: 10,
                   child: Container(
                     height: 40.h,
-                    width: 40.w,
+                    width: 40,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
@@ -378,104 +385,51 @@ class ExploreHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          padding: const EdgeInsets.only(top: 45, left: 15, right: 15),
-          height: 250.h,
-          decoration: BoxDecoration(
-            color: theme.primaryColor,
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(50),
-              bottomRight: Radius.circular(50),
-            ),
-          ),
-          child: Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  icon: const Icon(Icons.menu),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Current location',
-                      style: theme.textTheme.labelMedium
-                          ?.copyWith(color: Colors.white54),
-                    ),
-                    Text(
-                      'Jukwa',
-                      style: theme.textTheme.bodyText1
-                          ?.copyWith(color: Colors.white),
-                    ),
-                  ],
-                ),
-                const CircleAvatar(
-                  backgroundColor: Color(0xff645FEF),
-                  child: Icon(
-                    Icons.notifications,
-                    size: 20,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextField(
-              style: theme.textTheme.bodyText1,
-              // controller: searchController,
-              readOnly: true,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 5,
-                ),
-                labelText: 'Search...',
-                labelStyle: theme.textTheme.labelMedium
-                    ?.copyWith(color: Colors.white54),
-                prefixIcon: const Icon(
-                  CupertinoIcons.search,
-                  color: Colors.white,
-                ),
-                filled: true,
-                fillColor: const Color(0xff645FEF),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.r),
-                  borderSide: BorderSide.none,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: SizedBox.square(
+                dimension: 30,
+                child: Image.asset('assets/images/explore/search.png'),
+              ),
+              labelText: 'Search for...',
+              labelStyle: theme.textTheme.labelMedium,
+              suffixIcon: GestureDetector(
+                onTap: () {},
+                child: Image.asset(
+                  'assets/images/explore/filter.png',
+                  scale: 1,
                 ),
               ),
-              //  onTap: openWidget,
-            ),
-          ]),
-        ),
-        Positioned.fill(
-          bottom: -240.h,
-          child: ListView.separated(
-            itemCount: interests.length,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, i) {
-              return Chip(
-                labelPadding: const EdgeInsets.all(6),
-                backgroundColor: const Color(0xffFFF4EE),
-                label: Text(
-                  interests[i],
-                  style: theme.textTheme.bodyText1,
-                ),
-              );
-            },
-            separatorBuilder: (context, index) => const SizedBox(
-              width: 10,
             ),
           ),
-        ),
-      ],
+          SizedBox(
+            height: 60,
+            child: ListView.separated(
+              itemCount: interests.length,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, i) {
+                return Chip(
+                  labelPadding: const EdgeInsets.all(6),
+                  backgroundColor: const Color(0xffFFF4EE),
+                  label: Text(
+                    interests[i],
+                    style: theme.textTheme.bodyText1,
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 10,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
