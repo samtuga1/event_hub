@@ -42,7 +42,7 @@ class EventDetail extends StatelessWidget {
                 children: [
                   IconContainer(
                     height: 50.h,
-                    width: 50.w,
+                    width: 50,
                     icon: Icons.calendar_month,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -72,7 +72,7 @@ class EventDetail extends StatelessWidget {
                 children: [
                   IconContainer(
                     height: 45.h,
-                    width: 45.w,
+                    width: 45,
                     icon: Icons.explore,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -102,7 +102,7 @@ class EventDetail extends StatelessWidget {
                 children: [
                   IconContainer(
                     height: 45.h,
-                    width: 45.w,
+                    width: 45,
                     icon: Icons.confirmation_num,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -162,7 +162,7 @@ class EventDetail extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) => Container(
                         height: 150.h,
-                        width: 170.w,
+                        width: 170,
                         decoration: BoxDecoration(
                           color: Colors.amber,
                           borderRadius: BorderRadius.circular(15),
@@ -297,9 +297,9 @@ class EventDetailHeader extends StatelessWidget {
         ),
         Positioned(
           bottom: -20,
-          left: 50.w,
+          // left: 50,
           child: Container(
-            width: MediaQuery.of(context).size.width - 100.w,
+            width: 700,
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -313,12 +313,13 @@ class EventDetailHeader extends StatelessWidget {
               ],
             ),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     AvatarStack(
-                      width: 90.w,
+                      width: 90,
                       height: 30.h,
                       avatars: [
                         for (var n = 0; n < 5; n++)
