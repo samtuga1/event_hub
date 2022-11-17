@@ -3,6 +3,7 @@ import 'package:event_hub/logic/cubits/image_picker/image_picker_cubit.dart';
 import 'package:event_hub/logic/cubits/local_auth/local_auth_cubit.dart';
 import 'package:event_hub/logic/cubits/location/location_cubit.dart';
 import 'package:event_hub/presentation/router/app_router.dart';
+import 'package:event_hub/presentation/screens/main_home.dart';
 import 'package:event_hub/presentation/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -15,18 +16,19 @@ import 'firebase_options.dart';
 import 'presentation/screens/welcome_screen.dart';
 
 void main() async {
-  // runApp(const MyApp());
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.ios,
   );
-  await ScreenUtil.ensureScreenSize();
-  runApp(
+  // await ScreenUtil.ensureScreenSize();
+  return runApp(
     // const MyApp(),
     DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => const MyApp(), // Wrap your app
     ),
   );
+
+  // runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -58,6 +60,7 @@ class MyApp extends StatelessWidget {
           }),
         ],
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           scrollBehavior: defaultScrollBehaviour(
             context,
             Theme.of(context).platform == TargetPlatform.iOS,
@@ -66,7 +69,7 @@ class MyApp extends StatelessWidget {
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           theme: Styles.themeData(false),
-          home: WelcomeScreen(),
+          home: const MainHome(),
           onGenerateRoute: (settings) => AppRouter().generateRoute(settings),
         ),
       ),
