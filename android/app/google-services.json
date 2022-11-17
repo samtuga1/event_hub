@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "589840820110",
+    "project_id": "event-hub-368414",
+    "storage_bucket": "event-hub-368414.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589840820110:android:a4bfc2d2782236c9caa6df",
+        "android_client_info": {
+          "package_name": "com.example.event_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589840820110-88gdeor0rn9ivdsu7851klpuhq9oskdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUguFzyBP4sQmW7YLdbIJe2ne2SCR2tcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589840820110-88gdeor0rn9ivdsu7851klpuhq9oskdl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "589840820110-fpcraquhsgc8hic01er2v82tprkg2pmq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eventHub"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
