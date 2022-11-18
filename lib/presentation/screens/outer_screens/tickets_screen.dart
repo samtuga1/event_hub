@@ -1,5 +1,4 @@
-import 'package:event_hub/presentation/widgets/past_events.dart';
-import 'package:event_hub/presentation/widgets/upcoming_events.dart';
+import 'package:event_hub/presentation/widgets/event_tickets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +17,11 @@ class _MyStatefulWidgetState extends State<TicketsScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(
+      length: 3,
+      vsync: this,
+      animationDuration: const Duration(milliseconds: 650),
+    );
   }
 
   @override
@@ -47,14 +50,21 @@ class _MyStatefulWidgetState extends State<TicketsScreen>
             Tab(
               text: 'Past',
             ),
+            Tab(
+              text: 'Canceled',
+            ),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
         children: const [
-          UpcomingEvents(),
-          PastEvents(),
+          // UPCOMING
+          EventTickets(),
+          // PAST
+          EventTickets(),
+          // CANCELED
+          EventTickets(),
         ],
       ),
     );
