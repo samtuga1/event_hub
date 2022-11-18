@@ -1,4 +1,5 @@
 import 'package:avatar_stack/avatar_stack.dart';
+import 'package:event_hub/presentation/widgets/glass_container.dart';
 import 'package:event_hub/presentation/widgets/icon_container.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,8 +42,8 @@ class EventDetail extends StatelessWidget {
               Row(
                 children: [
                   IconContainer(
-                    height: 50.h,
-                    width: 50,
+                    height: 45.h,
+                    width: 50.w,
                     icon: Icons.calendar_month,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -72,7 +73,7 @@ class EventDetail extends StatelessWidget {
                 children: [
                   IconContainer(
                     height: 45.h,
-                    width: 45,
+                    width: 50.w,
                     icon: Icons.explore,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -102,7 +103,7 @@ class EventDetail extends StatelessWidget {
                 children: [
                   IconContainer(
                     height: 45.h,
-                    width: 45,
+                    width: 50.w,
                     icon: Icons.confirmation_num,
                     bgColor: theme.primaryColor.withOpacity(0.1),
                     iconColor: theme.primaryColor,
@@ -162,14 +163,17 @@ class EventDetail extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) => Container(
                         height: 150.h,
-                        width: 170,
+                        width: 170.w,
                         decoration: BoxDecoration(
-                          color: Colors.amber,
                           borderRadius: BorderRadius.circular(15),
+                          image: const DecorationImage(
+                            image: AssetImage('assets/images/sark.jpg'),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                       separatorBuilder: (context, index) => SizedBox(
-                        width: 10.h,
+                        width: 10.w,
                       ),
                       itemCount: 8,
                     ),
@@ -181,7 +185,10 @@ class EventDetail extends StatelessWidget {
               ),
               ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                leading: CircleAvatar(radius: 30.r),
+                leading: CircleAvatar(
+                  radius: 30.r,
+                  backgroundImage: const AssetImage('assets/images/sark.jpg'),
+                ),
                 title: Text(
                   'Sarkcess Music',
                   style: theme.textTheme.bodyText2,
@@ -193,7 +200,7 @@ class EventDetail extends StatelessWidget {
                 trailing: Container(
                   alignment: Alignment.center,
                   height: 40.h,
-                  width: 80.h,
+                  width: 80.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
                     color: theme.primaryColor,
@@ -233,8 +240,9 @@ class EventDetailHeader extends StatelessWidget {
         Container(
           padding: const EdgeInsets.only(top: 45, left: 7, right: 15),
           height: 250.h,
-          decoration: BoxDecoration(
-            color: theme.primaryColor,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/sark.jpg'), fit: BoxFit.fill),
           ),
           child: Column(children: [
             Row(
@@ -259,47 +267,17 @@ class EventDetailHeader extends StatelessWidget {
                     ),
                   ],
                 ),
-                GlassmorphicContainer(
-                  width: 40.w,
-                  height: 40.h,
-                  borderRadius: 7,
-                  blur: 90,
-                  alignment: Alignment.center,
-                  border: 0,
-                  linearGradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        const Color(0xFFffffff).withOpacity(0.1),
-                        const Color(0xFFFFFFFF).withOpacity(0.05),
-                      ],
-                      stops: const [
-                        0.1,
-                        1,
-                      ]),
-                  borderGradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      const Color(0xFFffffff).withOpacity(0.5),
-                      const Color((0xFFFFFFFF)).withOpacity(0.5),
-                    ],
-                  ),
-                  child: const Icon(
-                    Icons.bookmark,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                ),
+                const GlassContainer()
               ],
             ),
           ]),
         ),
         Positioned(
           bottom: -20,
-          // left: 50,
+          left: 50.w,
+          right: 50.w,
           child: Container(
-            width: 700,
+            width: MediaQuery.of(context).size.width - 50.w,
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -319,7 +297,7 @@ class EventDetailHeader extends StatelessWidget {
                 Row(
                   children: [
                     AvatarStack(
-                      width: 90,
+                      width: 90.w,
                       height: 30.h,
                       avatars: [
                         for (var n = 0; n < 5; n++)
